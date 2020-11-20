@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for
 from bs4 import BeautifulSoup
 import requests
 
@@ -11,5 +11,15 @@ app = Flask(__name__)
 def index():
     scrape = list(soup.find('table').stripped_strings)
     return render_template('index.html',**locals())
+
+@app.route('/contact', methods = ['GET','POST'])
+def contact():
+    if request.method == 'POST':
+        req = request
+        return render_template("form.html", req=req)
+    else:
+        req = request
+        return render_template("form.html")
+    
 
 app.run(debug=True)
