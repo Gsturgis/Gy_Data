@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, jsonify, json
+from flask import Flask, render_template, request, url_for, jsonify,json
 from flask_sqlalchemy import SQLAlchemy
 from bs4 import BeautifulSoup
 import requests
@@ -33,9 +33,11 @@ def index():
 
 @app.route('/api', methods=['GET'])
 def get_data():
+    # initializing db
     table = Legality.query.all()
-     d = {row.column_1:row.column_2 for row in table}
-    return json.dumps(table)
+    # modifying how information will display in view once jsonified
+    d = {row.state:[{"Decriminalized":row.decriminalized},{"Recreational":row.recreational},{"Medical":row.medical},{"Transportation":row.transportation},{"Cultivation":row.cultivation},{"Notes":row.notes}] for row in table}
+    return jsonify(d)
     
 
 @app.route('/contact', methods = ['GET','POST'])
