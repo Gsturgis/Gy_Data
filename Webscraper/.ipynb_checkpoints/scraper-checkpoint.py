@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
-from webscraper import db, Legality
+from app import db, Legality
 
 
 def scraper():
