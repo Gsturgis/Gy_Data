@@ -31,9 +31,9 @@ class Legality(db.Model):
 def index():
     return render_template('index.html',**locals())
 
+# GET requests to return all the info from Legality DB
 @app.route('/api', methods=['GET'])
 def get_data():
-    # initializing db
     table = Legality.query.all()
     # modifying how information will display in view once jsonified
     d = {row.state:[{"Decriminalized":row.decriminalized},{"Recreational":row.recreational},{"Medical":row.medical},{"Transportation":row.transportation},{"Cultivation":row.cultivation},{"Notes":row.notes}] for row in table}

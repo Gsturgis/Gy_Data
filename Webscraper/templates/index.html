@@ -1,13 +1,61 @@
 <!DOCTYPE html>
-<html lang=”en”>
- <head>
-  <meta charset=”UTF-8">
-  <meta name=”viewport” content=”width=device-width, initial-scale=1.0">
-  <meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
-  <title>Gyasi's Portfolio</title>
- </head>
- <body>
-     <h1> Web scraping using flask and bs4! </h1>
-  <p>{{ scrape }}</p>
- </body>
+<html lang="en"><head>
+	<meta name="generator" content="Hugo 0.79.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+
+    <title>
+            Hallo
+    </title>
+
+    
+    <link rel="stylesheet" href="https://themes.gohugo.io//theme/hallo-hugo/css/style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://themes.gohugo.io//theme/hallo-hugo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://themes.gohugo.io//theme/hallo-hugo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://themes.gohugo.io//theme/hallo-hugo/favicon-16x16.png">
+    <link rel="manifest" href="https://themes.gohugo.io//theme/hallo-hugo/site.webmanifest">
+
+    
+    <link href="https://themes.gohugo.io//theme/hallo-hugo/index.xml" rel="alternate" type="application/rss+xml" title="Hallo" />
+
+    
+        
+    
+</head>
+<body>
+
+<main>
+    <div class="block introduction">
+        <div class="column left">
+            <img src="static/portrait.jpg" class="portrait" alt="Portrait" />
+        </div>
+        <div class="column right"><h1>Hello.</h1><h2>I am Gyasi.</h2>
+            <p>     I am currently a college student studying Computer Science at Lehman college and a data science fellow at The Knowledge House. Some of my hobbies include bike riding, gaming and co-hosting a podcast called The Blerd and Nerds Podcast with my friends. </p>
+            
+            <p> Press the button below for webscraped data on Cannabis legaility by state.
+            <div class="button" style="width:60px;height:30px;"><a href="{{ url_for('get_data')}}"><button>Cannabis Legality</button></a></div>
+            
+            <div class="links"><a rel="me" href="mailto:gsturgis93@gmail.com" title="E-mail">
+                        <span class="fas fa-envelope"></span>
+                    </a><a rel="me" href="https://github.com/Gsturgis/Gy_Data" title="Github">
+                        <span class="fab fa-github"></span>
+                    </a><a rel="me" href="https://twitter.com/" title="Twitter">
+                        <span class="fab fa-twitter"></span>
+                    </a></div>
+        </div>
+    </div></main>
+
+<footer>
+    <div class="column"></div>
+    <div class="column">
+        Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/hallo-hugo/'>Hallo</a> theme.
+    </div>
+</footer></body>
 </html>
