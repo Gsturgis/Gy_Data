@@ -49,5 +49,5 @@ def contact():
         req = request
         return render_template("form.html")
     
-
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
