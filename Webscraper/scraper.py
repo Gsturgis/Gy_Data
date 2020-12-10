@@ -36,7 +36,7 @@ def scraper():
         #CSVWriter = csv.writer(CSVfile)
         #for ml in data_matrix:
             #CSVWriter.writerow(ml)
-    return dict(data_matrix)   
+    return data_matrix  
     
     
 
