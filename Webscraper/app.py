@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, url_for, jsonify,json
 from flask_sqlalchemy import SQLAlchemy
 from bs4 import BeautifulSoup
 import requests
-import os
 
 app = Flask(__name__)
 #DB
@@ -30,7 +29,7 @@ class Legality(db.Model):
 #Flask views
 @app.route('/')
 def index():
-    return render_template('index.html',**locals())
+    return render_template('index.html')
 
 # GET requests to return all the info from Legality DB
 @app.route('/api', methods=['GET'])
@@ -51,5 +50,4 @@ def contact():
         return render_template("form.html")
     
 
-port = int(os.environ.get("PORT", 5000))
-app.run(host="0.0.0.0", port=port)
+app.run(debug=True)

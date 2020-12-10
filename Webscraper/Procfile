@@ -1,2 +1,2 @@
-release: python scraper.py
+release: python ./scraper.py
 web: gunicorn app:app
