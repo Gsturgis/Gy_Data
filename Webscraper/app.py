@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for, jsonify,json
 from flask_sqlalchemy import SQLAlchemy
 from bs4 import BeautifulSoup
 import requests
+import os
 
 app = Flask(__name__)
 #DB
