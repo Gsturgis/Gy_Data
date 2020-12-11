@@ -27,9 +27,9 @@ class Legality(db.Model):
 
 
 #Flask views
-app.route("/", methods=["GET"])
-def home():
-    table = Legaility.query.all()
+@app.route("/info", methods=["GET"])
+def info():
+    table = Legality.query.all()
     d=[]
     for row in table:
         row_as_dict = {
@@ -43,9 +43,9 @@ def home():
         }
         d.append(row_as_dict)
     
-    return render_template("home.html", d=data)
+    return render_template("home.html", data = d)
 
-@app.route('/about')
+@app.route('/')
 def index():
     
     return render_template('index.html')

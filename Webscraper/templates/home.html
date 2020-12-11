@@ -1,12 +1,23 @@
-{% extends "base.html" %}
-
-{% block body %}
-<div>
+<!doctype html>
+<html>
+  <head>
+      <title></title>
+      
+  </head>
+  <body>
+    {% block body %}
+      
     {% for row in data %}
         <div>
-            <h1>{{row.State}}</h1>
-            <p>{{row.decriminalized}}{{row.recreational}} {{row.medical}} {{row.transportation}} {{row.cultivation}} {{row.notes}}</p>
+            <h1> {{row.state}}</h1>
+            <p> {"Decriminalized":row.decriminalized},{"Recreational":row.recreational},{"Medical":row.medical},{"Transportation":row.transportation},{"Cultivation":row.cultivation},{"Notes":row.notes} </p>
         </div>
     {% endfor %}
-</div>
-{% endblock %}
+
+      
+      
+      
+      
+    {% endblock %}
+  </body>
+</html>
