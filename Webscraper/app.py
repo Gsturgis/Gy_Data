@@ -27,8 +27,27 @@ class Legality(db.Model):
 
 
 #Flask views
-@app.route('/')
+app.route("/", methods=["GET"])
+def home():
+    table = Legaility.query.all()
+    d=[]
+    for row in table:
+        row_as_dict = {
+            "State": row.state,
+            "Decriminalized":row.decriminalized,
+            "Recreational":row.recreational,
+            "Medical":row.medical,
+            "Transportation":row.transportation,
+            "Cultivation":row.cultivation,
+            "notes":row.notes,
+        }
+        d.append(row_as_dict)
+    
+    return render_template("home.html", d=data)
+
+@app.route('/about')
 def index():
+    
     return render_template('index.html')
 
 # GET requests to return all the info from Legality DB
@@ -40,14 +59,14 @@ def get_data():
     return jsonify(d)
     
 
-@app.route('/contact', methods = ['GET','POST'])
-def contact():
-    if request.method == 'POST':
-        req = request
-        return render_template("form.html", req=req)
-    else:
-        req = request
-        return render_template("form.html")
+# @app.route('/contact', methods = ['GET','POST'])
+# def contact():
+#     if request.method == 'POST':
+#         req = request
+#         return render_template("form.html", req=req)
+#     else:
+#         req = request
+#         return render_template("form.html")
     
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+    {% for row in data %}
+        <div>
+            <h1>{{row.State}}</h1>
+            <p>{{row.decriminalized}}{{row.recreational}} {{row.medical}} {{row.transportation}} {{row.cultivation}} {{row.notes}}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
