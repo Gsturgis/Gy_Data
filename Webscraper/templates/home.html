@@ -7,15 +7,30 @@
   </head>
   <body>
     {% block body %}
-    
+    <table>
+  <tr>
+    <th>State</th>
+    <th>Decriminalized</th>
+    <th>Recreational</th>
+      <th>Medical</th>
+      <th>Transportation</th>
+      <th>Cultivation</th>
+      <th>Notes</th>
+  </tr>
       
     {% for row in data %}
-        <div>
+        <tr>
             
-            <p><font size="+2">{{row}}</font></p>
-        </div>
+             <td>{{row[0]}}</td> 
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+            <td>{{row[5]}}</td>
+            <td>{{row[6]}}</td>
+        </tr>
     {% endfor %}
-
+      </table>
       
       
       

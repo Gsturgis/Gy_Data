@@ -26,7 +26,7 @@ def scraper():
         if len(tds) == 7:
             values = [tds[0].text.replace('\n','').replace('\xa0', ''), tds[1].text.replace('\n',''),
                       tds[2].text.replace('\n',''), tds[3].text.replace('\n',''),
-                      tds[4].text.replace('\n','').replace('\xa0', ''), tds[5].text.replace('\n',''), tds[6].text.replace('\n','')]
+                      tds[4].text.replace('\n',''), tds[5].text.replace('\n',''), tds[6].text.replace('\n','')]
             data_matrix.append(values)
 
         else:
