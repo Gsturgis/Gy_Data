@@ -2,15 +2,16 @@
 <html>
   <head>
       <title></title>
-      
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" media="screen"/>   
   </head>
   <body>
     {% block body %}
+    
       
     {% for row in data %}
         <div>
-            <h1> {{row.state}}</h1>
-            <p> {"Decriminalized":row.decriminalized},{"Recreational":row.recreational},{"Medical":row.medical},{"Transportation":row.transportation},{"Cultivation":row.cultivation},{"Notes":row.notes} </p>
+            
+            <p> {{row}} </p>
         </div>
     {% endfor %}
 

@@ -32,19 +32,12 @@ def info():
     table = Legality.query.all()
     d=[]
     for row in table:
-        row_as_dict = {
-            "State": row.state,
-            "Decriminalized":row.decriminalized,
-            "Recreational":row.recreational,
-            "Medical":row.medical,
-            "Transportation":row.transportation,
-            "Cultivation":row.cultivation,
-            "notes":row.notes,
-        }
-        d.append(row_as_dict)
+        h = row.state, row.decriminalized, row.recreational, row.medical, row.transportation, row.cultivation, row.notes
+        d.append(h)
     
     return render_template("home.html", data = d)
 
+#main page
 @app.route('/')
 def index():
     
@@ -59,14 +52,6 @@ def get_data():
     return jsonify(d)
     
 
-# @app.route('/contact', methods = ['GET','POST'])
-# def contact():
-#     if request.method == 'POST':
-#         req = request
-#         return render_template("form.html", req=req)
-#     else:
-#         req = request
-#         return render_template("form.html")
     
 if __name__ == '__main__':
     app.run(debug=True)
