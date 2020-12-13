@@ -16,10 +16,11 @@ def scraper():
     data_matrix = []
 
     #table headers
-    columns = [v.text.replace('\n', '') for v in rows[0].findAll("th")]
+    #commented out because I did not want headers in my database
+    #columns = [v.text.replace('\n', '') for v in rows[0].findAll("th")]
     #columns.pop(1)
     #columns.pop(5)
-    data_matrix.append(columns)
+    #data_matrix.append(columns)
     for i in range(1, len(rows)):
         tds = rows[i].findAll("td")
 
