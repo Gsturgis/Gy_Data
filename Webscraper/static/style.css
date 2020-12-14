@@ -1,6 +1,6 @@
 body{
     background-color: black;
-    color: #f3f3f3 ;
+    
 }
 
 .content-table{
@@ -24,6 +24,7 @@ body{
 .content-table th,
 .content-table td{
     padding: 12px 15px;
+    color: black;
 }
 
 .content-table tr{
