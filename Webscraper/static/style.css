@@ -38,3 +38,7 @@ body{
 .content-table tr: last-of-type{
     border-bottom: 2px solid #9FE2BF;
 }
+
+.content-table td{
+    color: 3A3D3B;
+}
